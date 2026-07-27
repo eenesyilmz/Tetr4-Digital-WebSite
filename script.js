@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
     history.scrollRestoration = 'manual';
     window.scrollTo(0, 0);
 
-    let isIntroFinished = false;
+    const hasSeenIntro = false;
 
-    const hasSeenIntro = sessionStorage.getItem("tetr4_intro_seen");
+    let isIntroFinished = false;
 
     if (!hasSeenIntro) {
         document.documentElement.style.overflow = "hidden";
@@ -82,7 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 isIntroFinished = true;
                 document.documentElement.style.overflow = "";
                 document.body.style.overflow = "";
-                sessionStorage.setItem("tetr4_intro_seen", "true");
                 ScrollTrigger.refresh();
             }
         });
