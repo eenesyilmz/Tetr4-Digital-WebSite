@@ -10,8 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuLinks = document.querySelectorAll("#menu a");
     const scrollBtn = document.querySelector("#scrollTopBtn");
     
-    // Yüzen butonumuz
+    // Yüzen butonlarımız
     const aboutBtnMain = document.getElementById("about-btn");
+    const langBtnMain = document.getElementById("lang-btn");
 
     const setViewportHeight = () => {
         let vh = window.innerHeight * 0.01;
@@ -56,11 +57,11 @@ document.addEventListener("DOMContentLoaded", () => {
             hamburger.style.display = "flex";
             hamburger.classList.add("visible");
         }
-        const langBtn = document.querySelector("#langToggleBtn");
-        if (langBtn) langBtn.classList.add("visible");
+        
         gsap.set("h1", { x: 0, opacity: 1 });
         
         if (aboutBtnMain) aboutBtnMain.classList.add("visible");
+        if (langBtnMain) langBtnMain.classList.add("visible");
         
         isIntroFinished = true;
     } else {
@@ -149,13 +150,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     hamburger.classList.add("visible");
                 }
                 
-                // Navbar görünür olduğu anda butonu da görünür yap
                 if (aboutBtnMain) aboutBtnMain.classList.add("visible");
+                if (langBtnMain) langBtnMain.classList.add("visible");
                 
             }, 1)
             .call(() => {
-                const langBtn = document.querySelector("#langToggleBtn");
-                if (langBtn) langBtn.classList.add("visible");
                 if (hamburger && window.innerWidth <= 768) {
                     hamburger.style.display = "flex";
                     hamburger.classList.add("visible");

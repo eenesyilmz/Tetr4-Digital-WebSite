@@ -292,7 +292,7 @@ body::after {
   #menu.fixed-nav {
     position: fixed;
     top: 0;
-    right: clamp(90px, 11vw, 150px);
+    right: clamp(20px, 5vw, 70px); 
     height: 88px;
     flex-direction: row !important;
     align-items: center;
@@ -520,33 +520,6 @@ section h2 {
   letter-spacing: -2px;
 }
 
-#langToggleBtn {
-  background: transparent;
-  border: 2px solid var(--accent-green);
-  color: var(--accent-green);
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-weight: bold;
-  font-size: 0.85rem;
-  transition: all 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  text-decoration: none;
-  flex-shrink: 0;
-}
-
-#langToggleBtn.visible {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-#langToggleBtn:hover {
-  background: var(--accent-green);
-  color: var(--bg-forest);
-}
-
 h1 {
   font-size: clamp(2rem, 5.5vw, 4rem);
   font-weight: 700;
@@ -577,7 +550,6 @@ h1 span {
   }
 }
 
-/* YENİ EKLENEN KISIM: Tetr4 Studio'yu yukarı itmek için padding-bottom eklendi */
 #Tetr4Lab {
   flex-direction: column;
   align-items: flex-start;
@@ -759,7 +731,6 @@ h1 span {
   width: 100%;
 }
 
-/* YUKARI ÇIKMA BUTONU */
 #scrollTopBtn {
   position: fixed;
   bottom: 30px;
@@ -768,13 +739,13 @@ h1 span {
   background: rgba(0, 12, 7, 0.85);
   border: 1px solid var(--accent-green);
   color: var(--accent-green);
-  width: 55px; /* Hakkımızda butonu ile aynı genişlik */
-  height: 55px; /* Hakkımızda butonu ile aynı yükseklik */
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem; /* Hakkımızda ikonu ile aynı boyut */
+  font-size: 1.2rem;
   cursor: pointer;
   z-index: 999;
   opacity: 0;
@@ -794,10 +765,9 @@ h1 span {
   transform: translateX(-50%) translateY(0);
 }
 
-/* Kayan buton footer'a çarpmaması için yüksekte sabitlenir */
 #scrollTopBtn.absolute {
   position: absolute;
-  bottom: 110px; /* <--- 30px'ten 110px'e çıkarıldı */
+  bottom: 110px;
   transform: translateX(-50%) translateY(0);
 }
 
@@ -982,18 +952,13 @@ body::-webkit-scrollbar,
 .terminal-line.success { color: var(--accent-green); }
 .terminal-line.highlight { color: #38bdf8; }
 
-/* ==================================================
-   YÜZEN HAKKIMIZDA BUTONU, OVERLAY & BULUT POP-UP
-   ================================================== */
-
-/* Arka Plan Bulanıklığı (Overlay) */
 .about-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 12, 7, 0.4); 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  z-index: 10005; /* Navbar ve Menünün üstüne çıkması için artırıldı */
+  z-index: 10005;
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s ease;
@@ -1004,12 +969,11 @@ body::-webkit-scrollbar,
   visibility: visible;
 }
 
-/* Genişleyen Yüzen Buton */
 .floating-about-btn {
   position: fixed;
   bottom: 30px;
   right: clamp(20px, 5vw, 70px); 
-  width: 55px; /* Başlangıçta sadece ikon kadar */
+  width: 55px;
   height: 55px;
   border-radius: 30px;
   background: rgba(0, 12, 7, 0.85);
@@ -1017,7 +981,7 @@ body::-webkit-scrollbar,
   color: var(--accent-green);
   box-shadow: 0 0 15px rgba(0, 255, 135, 0.15);
   cursor: pointer;
-  z-index: 10006; /* Pop-up ile aynı hizada kalması için artırıldı */
+  z-index: 10006;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -1025,14 +989,12 @@ body::-webkit-scrollbar,
   overflow: hidden; 
   white-space: nowrap;
   
-  /* Navbar gelene kadar görünmez olacak */
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* JS ile eklenecek 'Görünür' sınıfı */
 .floating-about-btn.visible {
   opacity: 1;
   visibility: visible;
@@ -1040,7 +1002,7 @@ body::-webkit-scrollbar,
 }
 
 .floating-about-btn i {
-  min-width: 55px; /* İkonu 55px'lik alanın içinde hep merkezler */
+  min-width: 55px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1055,7 +1017,6 @@ body::-webkit-scrollbar,
   transition: all 0.3s ease;
 }
 
-/* Hover Efekti - Sola doğru genişleme */
 .floating-about-btn:hover {
   width: 165px; 
   background: var(--accent-green);
@@ -1068,7 +1029,70 @@ body::-webkit-scrollbar,
   transform: translateX(0);
 }
 
-/* Bulut Pop-up (Tam Ortada Açılan Modal Hali) */
+.floating-lang-btn {
+  position: fixed;
+  bottom: 30px;
+  left: clamp(20px, 5vw, 70px); 
+  width: 55px;
+  height: 55px;
+  border-radius: 30px;
+  background: rgba(0, 12, 7, 0.85);
+  border: 1px solid var(--accent-green);
+  color: var(--accent-green);
+  box-shadow: 0 0 15px rgba(0, 255, 135, 0.15);
+  cursor: pointer;
+  z-index: 10006;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 1.2rem;
+  overflow: hidden; 
+  white-space: nowrap;
+  text-decoration: none;
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-lang-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.floating-lang-btn i {
+  min-width: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 2;
+}
+
+.floating-lang-btn span {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  order: 1;
+  padding-left: 15px;
+}
+
+.floating-lang-btn:hover {
+  width: 155px; 
+  background: var(--accent-green);
+  color: var(--bg-forest);
+  box-shadow: 0 0 25px rgba(0, 255, 135, 0.4);
+}
+
+.floating-lang-btn:hover span {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .about-cloud-popup {
   position: fixed;
   top: 50%;
@@ -1082,19 +1106,17 @@ body::-webkit-scrollbar,
   padding: 40px; 
   border-radius: 16px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 255, 135, 0.05);
-  z-index: 10006; /* Overlay'in de üstünde */
+  z-index: 10006;
   font-family: 'Space Grotesk', sans-serif; 
   
   opacity: 0;
   visibility: hidden;
   
-  /* Tam ortaya hizalama ve animasyon başlangıç durumu */
   transform: translate(-50%, -45%) scale(0.95);
   transform-origin: center;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
 
-/* Konuşma balonu kuyruklarını gizliyoruz çünkü ekran ortasında havada duracak */
 .about-cloud-popup::after,
 .about-cloud-popup::before {
   display: none;
@@ -1141,6 +1163,5 @@ body::-webkit-scrollbar,
 .about-cloud-popup.show {
   opacity: 1;
   visibility: visible;
-  /* Animasyon bittiğinde tam merkezde durur */
   transform: translate(-50%, -50%) scale(1);
 }
