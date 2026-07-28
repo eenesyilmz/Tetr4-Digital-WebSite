@@ -93,12 +93,6 @@
             <small class="coming-soon-badge">Yakında</small>
           </a>
         </li>
-        <li>
-          <a href="#about">
-            <i class="fa-solid fa-circle-info"></i>
-            <span data-i18n="menuAbout">Hakkımızda</span>
-          </a>
-        </li>
       </ul>
     </section>
 
@@ -238,48 +232,34 @@
       </div>
     </section>
 
-    <section id="about">
-      <div class="lab-container">
-        <div class="section-header">
-          <h2>Hakkımızda</h2>
-          <p>
-            Geleceğin dijital dünyasını bugünden inşa ediyor, sıradanlığı
-            reddediyoruz.
-          </p>
-        </div>
-        <div class="lab-card" style="max-width: 900px">
-          <div class="lab-card-content">
-            <span class="lab-tag">TETR4 DIGITAL — MANIFESTO & VİZYON</span>
-            <h3 style="font-size: 1.8rem; margin-bottom: 20px">
-              Kod, Tasarım ve İnovasyonun Buluşma Noktası
-            </h3>
-            <p style="margin-bottom: 18px; line-height: 1.7">
-              Tetr4 Digital; fikirleri sadece birer yazılıma değil,
-              kullanıcıların hayatına değer katan, ölçeklenebilir ve yüksek
-              performanslı dijital ürünlere dönüştürmek amacıyla kurulmuş yeni
-              nesil bir dijital ajans ve teknoloji stüdyosudur. Dijital dünyada
-              kalıcı izler bırakmak isteyen markalar için sınırları zorlayan
-              çözümler üretiyoruz.
-            </p>
-            <p style="margin-bottom: 18px; line-height: 1.7">
-              Geliştirdiğimiz özgün mobil uygulamalar, otomasyon çözümleri ve
-              modern web mimarileri (Tetr4 Lab & Studio) ile projelerin sadece
-              görsel estetiğine değil, altyapısal sağlamlığına da odaklanıyoruz.
-              Her satır kodda en iyi deneyimi sunmayı hedefleyen geliştirici ve
-              tasarımcı ruhumuzla, en karmaşık fikirleri bile kusursuz dijital
-              deneyimlere çeviriyoruz.
-            </p>
-            <p style="line-height: 1.7">
-              Bizim için teknoloji yalnızca bir araç değil; hayatı
-              kolaylaştıran, markaları kitlelerle buluşturan ve sınır tanımayan
-              bir sanattır. Tetr4 Digital olarak, her projeyi kendi dijital
-              imzamız olarak görüyor ve geleceği bugünden kodlamaya devam
-              ediyoruz.
-            </p>
-          </div>
-        </div>
+    <!-- SAĞ ALT HAKKIMIZDA BUTONU, OVERLAY & POP-UP -->
+    <div id="about-overlay" class="about-overlay"></div>
+
+    <button id="about-btn" class="floating-about-btn" aria-label="Hakkımızda">
+      <i class="fa-solid fa-circle-info"></i>
+      <span>Hakkımızda</span>
+    </button>
+
+    <div id="about-cloud" class="about-cloud-popup">
+      <span class="lab-tag" style="display: inline-block; margin-bottom: 15px; font-size: 0.75rem;">TETR4 DIGITAL — MANIFESTO & VİZYON</span>
+      <h3>Kod, Tasarım ve İnovasyonun Buluşma Noktası</h3>
+      
+      <div class="about-content-scroll">
+        <p style="font-weight: 600; color: var(--accent-green); margin-bottom: 20px;">
+          Geleceğin dijital dünyasını bugünden inşa ediyor, sıradanlığı reddediyoruz.
+        </p>
+        <p>
+          Tetr4 Digital; fikirleri sadece birer yazılıma değil, kullanıcıların hayatına değer katan, ölçeklenebilir ve yüksek performanslı dijital ürünlere dönüştürmek amacıyla kurulmuş yeni nesil bir dijital ajans ve teknoloji stüdyosudur. Dijital dünyada kalıcı izler bırakmak isteyen markalar için sınırları zorlayan çözümler üretiyoruz.
+        </p>
+        <p>
+          Geliştirdiğimiz özgün mobil uygulamalar, otomasyon çözümleri ve modern web mimarileri (Tetr4 Lab & Studio) ile projelerin sadece görsel estetiğine değil, altyapısal sağlamlığına da odaklanıyoruz. Her satır kodda en iyi deneyimi sunmayı hedefleyen geliştirici ve tasarımcı ruhumuzla, en karmaşık fikirleri bile kusursuz dijital deneyimlere çeviriyoruz.
+        </p>
+        <p>
+          Bizim için teknoloji yalnızca bir araç değil; hayatı kolaylaştıran, markaları kitlelerle buluşturan ve sınır tanımayan bir sanattır. Tetr4 Digital olarak, her projeyi kendi dijital imzamız olarak görüyor ve geleceği bugünden kodlamaya devam ediyoruz.
+        </p>
       </div>
-    </section>
+    </div>
+    <!-- POP-UP SONU -->
 
     <a href="#hero" id="scrollTopBtn">
       <i class="fa-solid fa-arrow-up"></i>

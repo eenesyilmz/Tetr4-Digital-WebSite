@@ -752,6 +752,7 @@ h1 span {
   width: 100%;
 }
 
+/* YUKARI ÇIKMA BUTONU (Boyutları Hakkımızda butonuyla eşitlendi) */
 #scrollTopBtn {
   position: fixed;
   bottom: 30px;
@@ -760,13 +761,13 @@ h1 span {
   background: rgba(0, 12, 7, 0.85);
   border: 1px solid var(--accent-green);
   color: var(--accent-green);
-  width: 45px;
-  height: 45px;
+  width: 55px; /* 45px'ten 55px'e çıkarıldı */
+  height: 55px; /* 45px'ten 55px'e çıkarıldı */
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem; /* 1.1rem'den 1.2rem'e çıkarıldı */
   cursor: pointer;
   z-index: 999;
   opacity: 0;
@@ -972,3 +973,166 @@ body::-webkit-scrollbar,
 .terminal-line.muted { color: var(--text-muted); }
 .terminal-line.success { color: var(--accent-green); }
 .terminal-line.highlight { color: #38bdf8; }
+
+/* ==================================================
+   YÜZEN HAKKIMIZDA BUTONU, OVERLAY & BULUT POP-UP
+   ================================================== */
+
+/* Arka Plan Bulanıklığı (Overlay) */
+.about-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 12, 7, 0.4); 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10005; /* Navbar ve Menünün üstüne çıkması için artırıldı */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+.about-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Genişleyen Yüzen Buton */
+.floating-about-btn {
+  position: fixed;
+  bottom: 30px;
+  right: clamp(20px, 5vw, 70px); 
+  width: 55px; /* Başlangıçta sadece ikon kadar */
+  height: 55px;
+  border-radius: 30px;
+  background: rgba(0, 12, 7, 0.85);
+  border: 1px solid var(--accent-green);
+  color: var(--accent-green);
+  box-shadow: 0 0 15px rgba(0, 255, 135, 0.15);
+  cursor: pointer;
+  z-index: 10006; /* Pop-up ile aynı hizada kalması için artırıldı */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.2rem;
+  overflow: hidden; 
+  white-space: nowrap;
+  
+  /* Navbar gelene kadar görünmez olacak */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* JS ile eklenecek 'Görünür' sınıfı */
+.floating-about-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.floating-about-btn i {
+  min-width: 55px; /* İkonu 55px'lik alanın içinde hep merkezler */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-about-btn span {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+}
+
+/* Hover Efekti - Sola doğru genişleme */
+.floating-about-btn:hover {
+  width: 165px; 
+  background: var(--accent-green);
+  color: var(--bg-forest);
+  box-shadow: 0 0 25px rgba(0, 255, 135, 0.4);
+}
+
+.floating-about-btn:hover span {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Bulut Pop-up (Tam Ortada Açılan Modal Hali) */
+.about-cloud-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: clamp(320px, 90vw, 700px); 
+  background: rgba(0, 12, 7, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-line);
+  color: var(--text-main);
+  padding: 40px; 
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 255, 135, 0.05);
+  z-index: 10006; /* Overlay'in de üstünde */
+  font-family: 'Space Grotesk', sans-serif; 
+  
+  opacity: 0;
+  visibility: hidden;
+  
+  /* Tam ortaya hizalama ve animasyon başlangıç durumu */
+  transform: translate(-50%, -45%) scale(0.95);
+  transform-origin: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+/* Konuşma balonu kuyruklarını gizliyoruz çünkü ekran ortasında havada duracak */
+.about-cloud-popup::after,
+.about-cloud-popup::before {
+  display: none;
+}
+
+.about-cloud-popup h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--text-main);
+  font-size: 1.6rem; 
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.about-content-scroll {
+  max-height: 350px; 
+  overflow-y: auto;
+  padding-right: 15px;
+}
+
+.about-content-scroll::-webkit-scrollbar {
+  display: block;
+  width: 4px;
+}
+.about-content-scroll::-webkit-scrollbar-thumb {
+  background: var(--border-line);
+  border-radius: 10px;
+}
+.about-content-scroll:hover::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 135, 0.3);
+}
+
+.about-cloud-popup p {
+  margin: 0 0 16px 0;
+  color: var(--text-muted);
+  font-size: 1.05rem; 
+  line-height: 1.7;
+  font-family: 'Space Grotesk', sans-serif; 
+}
+.about-cloud-popup p:last-child {
+  margin-bottom: 0;
+}
+
+.about-cloud-popup.show {
+  opacity: 1;
+  visibility: visible;
+  /* Animasyon bittiğinde tam merkezde durur */
+  transform: translate(-50%, -50%) scale(1);
+}
