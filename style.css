@@ -577,11 +577,18 @@ h1 span {
   }
 }
 
-#Tetr4Lab,
+/* YENİ EKLENEN KISIM: Tetr4 Studio'yu yukarı itmek için padding-bottom eklendi */
+#Tetr4Lab {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
 #Tetr4Studio {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  padding-bottom: 180px; 
 }
 
 .lab-container,
@@ -752,7 +759,7 @@ h1 span {
   width: 100%;
 }
 
-/* YUKARI ÇIKMA BUTONU (Boyutları Hakkımızda butonuyla eşitlendi) */
+/* YUKARI ÇIKMA BUTONU */
 #scrollTopBtn {
   position: fixed;
   bottom: 30px;
@@ -761,13 +768,13 @@ h1 span {
   background: rgba(0, 12, 7, 0.85);
   border: 1px solid var(--accent-green);
   color: var(--accent-green);
-  width: 55px; /* 45px'ten 55px'e çıkarıldı */
-  height: 55px; /* 45px'ten 55px'e çıkarıldı */
+  width: 55px; /* Hakkımızda butonu ile aynı genişlik */
+  height: 55px; /* Hakkımızda butonu ile aynı yükseklik */
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem; /* 1.1rem'den 1.2rem'e çıkarıldı */
+  font-size: 1.2rem; /* Hakkımızda ikonu ile aynı boyut */
   cursor: pointer;
   z-index: 999;
   opacity: 0;
@@ -787,9 +794,10 @@ h1 span {
   transform: translateX(-50%) translateY(0);
 }
 
+/* Kayan buton footer'a çarpmaması için yüksekte sabitlenir */
 #scrollTopBtn.absolute {
   position: absolute;
-  bottom: 30px;
+  bottom: 110px; /* <--- 30px'ten 110px'e çıkarıldı */
   transform: translateX(-50%) translateY(0);
 }
 

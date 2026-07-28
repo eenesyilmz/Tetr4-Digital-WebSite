@@ -6,6 +6,7 @@
     <title>TETR4 DIGITAL | Next-Gen Digital Products & Services</title>
     <link rel="icon" type="image/png" href="4LogoPNG.png" />
     <link rel="stylesheet" href="style.css" />
+    <meta name="description" content="Paving the way for future mobile projects. Share your ideas with us, and let's build next-gen solutions shaped by your vision together."/>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
@@ -61,41 +62,35 @@
         <img src="4LogoPNG.png" id="logo4" alt="Tetr4 Logo" />
       </div>
       <div id="heroContent">
-        <h1>
-          Turning Ideas into Products,<br /><span>Brands into Audiences.</span>
+        <h1 data-i18n="heroTitle">
+          Transforming Ideas into Products,<br /><span>Brands into Audiences.</span>
         </h1>
       </div>
       <ul id="menu">
         <li>
           <a href="#Tetr4Lab">
             <i class="fa-solid fa-flask"></i>
-            <span>Tetr4 Lab</span>
+            <span data-i18n="menuLab">Tetr4 Lab</span>
           </a>
         </li>
         <li>
           <a href="#Tetr4Studio">
             <i class="fa-solid fa-palette"></i>
-            <span>Tetr4 Studio</span>
+            <span data-i18n="menuStudio">Tetr4 Studio</span>
           </a>
         </li>
         <li>
           <a href="#Tetr4Digital" class="disabled-link">
             <i class="fa-solid fa-laptop-code"></i>
-            <span>Tetr4 Digital</span>
+            <span data-i18n="menuDigital">Tetr4 Digital</span>
             <small class="coming-soon-badge">Soon</small>
           </a>
         </li>
         <li>
           <a href="#Tetr4Talents" class="disabled-link">
             <i class="fa-solid fa-users"></i>
-            <span>Tetr4 Talent</span>
+            <span data-i18n="menuTalents">Tetr4 Talent</span>
             <small class="coming-soon-badge">Soon</small>
-          </a>
-        </li>
-        <li>
-          <a href="#about">
-            <i class="fa-solid fa-circle-info"></i>
-            <span>About Us</span>
           </a>
         </li>
       </ul>
@@ -106,8 +101,7 @@
         <div class="section-header">
           <h2>Tetr4 Lab</h2>
           <p>
-            Innovative digital products and automation solutions we've
-            developed.
+            Innovative digital products and automation solutions developed by us.
           </p>
         </div>
 
@@ -117,9 +111,7 @@
               <span class="lab-tag">MOBILE APP</span>
               <h3>FSMVÜ APP</h3>
               <p>
-                A modern mobile application experience enabling Fatih Sultan
-                Mehmet Vakıf University students to seamlessly track campus
-                life, course schedules, and announcements from a single hub.
+                A modern mobile application experience enabling Fatih Sultan Mehmet Foundation University students to track campus life, course schedules, and announcements from a single hub.
               </p>
             </div>
           </div>
@@ -129,9 +121,7 @@
               <span class="lab-tag">WEB & MOBILE APP & PRODUCTIVITY</span>
               <h3>Green To Do</h3>
               <p>
-                A local-first, sustainability-focused next-gen task management
-                platform that optimizes daily routines and makes tracking carbon
-                footprint engaging.
+                A next-gen task management platform running locally, focused on sustainability, optimizing daily habits, and making carbon footprint tracking fun.
               </p>
             </div>
           </div>
@@ -141,9 +131,7 @@
               <span class="lab-tag">AUTOMATION & AI</span>
               <h3>SEO Automations</h3>
               <p>
-                Custom software solutions designed to put content optimization,
-                keyword tracking, and technical SEO audits on autopilot for
-                large-scale web projects.
+                Custom software solutions putting content optimization, keyword tracking, and technical SEO audits on autopilot for large-scale web projects.
               </p>
             </div>
           </div>
@@ -159,7 +147,7 @@
 
         <div class="design-content-grid">
           <div class="idea-form-box">
-            <h3>Got an idea?</h3>
+            <h3>Have an Idea?</h3>
             <p>
               Share your project or thought with us, and let's bring it to life.
             </p>
@@ -237,45 +225,34 @@
       </div>
     </section>
 
-    <section id="about">
-      <div class="lab-container">
-        <div class="section-header">
-          <h2>About Us</h2>
-          <p>
-            Building the digital world of tomorrow today, rejecting mediocrity.
-          </p>
-        </div>
-        <div class="lab-card" style="max-width: 900px">
-          <div class="lab-card-content">
-            <span class="lab-tag">TETR4 DIGITAL — MANIFESTO & VISION</span>
-            <h3 style="font-size: 1.8rem; margin-bottom: 20px">
-              The Intersection of Code, Design, and Innovation
-            </h3>
-            <p style="margin-bottom: 18px; line-height: 1.7">
-              Tetr4 Digital is a next-generation digital agency and technology
-              studio founded to transform ideas not just into software, but into
-              scalable, high-performance digital products that add value to
-              users' lives. We deliver boundary-pushing solutions for brands
-              aiming to leave a permanent mark in the digital landscape.
-            </p>
-            <p style="margin-bottom: 18px; line-height: 1.7">
-              With our proprietary mobile applications, automation solutions,
-              and modern web architectures (Tetr4 Lab & Studio), we focus on
-              infrastructure robustness as well as visual aesthetics. Driven by
-              developer and designer mindsets committed to delivering the best
-              experience in every single line of code, we turn even the most
-              complex ideas into flawless digital experiences.
-            </p>
-            <p style="line-height: 1.7">
-              For us, technology is not merely a tool; it's an art form that
-              simplifies life, connects brands with audiences, and defies
-              boundaries. As Tetr4 Digital, we treat every project as our own
-              digital signature and continue coding the future today.
-            </p>
-          </div>
-        </div>
+    <!-- BOTTOM RIGHT ABOUT BUTTON, OVERLAY & POP-UP -->
+    <div id="about-overlay" class="about-overlay"></div>
+
+    <button id="about-btn" class="floating-about-btn" aria-label="About Us">
+      <i class="fa-solid fa-circle-info"></i>
+      <span>About Us</span>
+    </button>
+
+    <div id="about-cloud" class="about-cloud-popup">
+      <span class="lab-tag" style="display: inline-block; margin-bottom: 15px; font-size: 0.75rem;">TETR4 DIGITAL — MANIFESTO & VISION</span>
+      <h3>The Intersection of Code, Design, and Innovation</h3>
+      
+      <div class="about-content-scroll">
+        <p style="font-weight: 600; color: var(--accent-green); margin-bottom: 20px;">
+          We are building the digital world of tomorrow today, rejecting mediocrity.
+        </p>
+        <p>
+          Tetr4 Digital is a next-generation digital agency and technology studio established with the mission of turning ideas not just into software, but into scalable, high-performance digital products that add value to users' lives. We craft pushing-the-boundaries solutions for brands seeking to leave a lasting mark in the digital landscape.
+        </p>
+        <p>
+          Through our original mobile apps, automation solutions, and modern web architectures (Tetr4 Lab & Studio), we focus not only on visual aesthetics but also on structural robustness. With a developer and designer mindset aiming for the best experience in every line of code, we transform even the most complex ideas into flawless digital experiences.
+        </p>
+        <p>
+          For us, technology is more than a tool; it is an art form that simplifies life, connects brands with audiences, and knows no bounds. As Tetr4 Digital, we see every project as our own digital signature and continue coding the future starting today.
+        </p>
       </div>
-    </section>
+    </div>
+    <!-- POP-UP END -->
 
     <a href="#hero" id="scrollTopBtn">
       <i class="fa-solid fa-arrow-up"></i>
@@ -283,7 +260,7 @@
 
     <div class="footer-action">
       <div class="footer-info">
-        &copy; 2026 TETR4 DIGITAL
+        &copy; 2026 TETR4 DIGITAL 
         <a href="mailto:info@tetr4digital.com">info@tetr4digital.com</a>
         <a
           href="https://www.instagram.com/tetr4digital/"

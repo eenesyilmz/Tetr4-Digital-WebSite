@@ -60,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (langBtn) langBtn.classList.add("visible");
         gsap.set("h1", { x: 0, opacity: 1 });
         
-        // Animasyon önceden tamamlandıysa butonu hemen görünür yap
         if (aboutBtnMain) aboutBtnMain.classList.add("visible");
         
         isIntroFinished = true;
@@ -352,19 +351,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- YÜZEN HAKKIMIZDA OVERLAY VE POP-UP İŞLEMLERİ ---
     const aboutBtn = document.getElementById("about-btn");
     const aboutCloud = document.getElementById("about-cloud");
     const aboutOverlay = document.getElementById("about-overlay");
 
     if (aboutBtn && aboutCloud && aboutOverlay) {
-        // Butona tıklandığında pop-up açılır ve sayfa kilitlenir
         aboutBtn.addEventListener("click", (e) => {
             e.stopPropagation(); 
             const isOpen = aboutCloud.classList.toggle("show");
             aboutOverlay.classList.toggle("show");
             
-            // Pop-up açıksa sayfayı kilitle, kapalıysa serbest bırak
             if (isOpen) {
                 document.body.style.overflow = "hidden";
             } else {
@@ -372,17 +368,15 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Pop-up içine tıklandığında kapanmasın
         aboutCloud.addEventListener("click", (e) => {
             e.stopPropagation();
         });
 
-        // Sayfada (overlay dahil) herhangi bir yere tıklanırsa kapat ve scroll'u aç
         document.addEventListener("click", () => {
             if (aboutCloud.classList.contains("show")) {
                 aboutCloud.classList.remove("show");
                 aboutOverlay.classList.remove("show");
-                document.body.style.overflow = ""; // Kaydırma kilidini kaldır
+                document.body.style.overflow = "";
             }
         });
     }
